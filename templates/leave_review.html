@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <form action="{{ url_for('view_reviews') }}" method="POST">
     {{ form.name.label() }}{{ form.name() }}<br>
     {{ form.movie.label() }}{{ form.movie() }}<br>
@@ -7,4 +11,4 @@
     {{ form.hidden_tag() }}
 </form>
 
-{% extends 'base.html' %}
+{% endblock %}

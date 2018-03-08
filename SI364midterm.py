@@ -39,9 +39,6 @@ def get_movie_results(title):
     return(response)
 
 
-def get_or_create_review(name):
-    pass
-
 ##################
 ##### MODELS #####
 ##################
@@ -64,9 +61,7 @@ class Movie(db.Model):
     year_released = db.Column(db.String)
     plot = db.Column(db.String)
     reviews = db.relationship('MovieReviews', backref='Movie')
-    #
-    # def __repr__(self):
-    #     return "{%r}, (Released: {%r})" % (self.text, self.id) ## __repr__ method
+
 
 class MovieReviews(db.Model):
     __tablename__ = 'reviews'
@@ -94,9 +89,9 @@ class MovieReviewForm(FlaskForm):
     number_of_stars = IntegerField("Rate the movie out of 5 stars ",validators=[Required()])
     submit = SubmitField("Submit your review")
 
-    # def validate_number_of_stars(form, field):
-    #     if '.' in field.data:
-    #         raise ValidationError('Have to be full numbers, no decimals for star rating')
+    def validate_number_of_stars(form, field):
+        if len(str(field.data)) > 1 :
+            raise ValidationError('Have to be full numbers, no decimals for star rating')
 
 
 #######################
@@ -105,7 +100,7 @@ class MovieReviewForm(FlaskForm):
 
 @app.route('/')
 def home():
-    return render_template('base.html')
+    return render_template('home.html')
 
 @app.route('/find_movie')
 def find_movie():
@@ -171,6 +166,7 @@ def view_reviews():
 
         if movie_review:
             print("You have already submitted this review")
+            return redirect(url_for("leave_review"))
         else:
             movie_review = MovieReviews(name = name, title = movie, review = movie_review_entry, stars = number_of_stars)
             db.session.add(movie_review)

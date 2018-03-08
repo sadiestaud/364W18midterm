@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+
 {% block content %}
 <ul>
 {% for r in all_reviews %}
@@ -15,7 +17,5 @@
 {% if not all_reviews %}
     There are no saved reviews to show.
 {% endif %}
+
 {% endblock %}
-
-
-{% extends 'base.html' %}
