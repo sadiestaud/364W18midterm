@@ -1,0 +1,8 @@
+
+<form action="{{ url_for('movie_results') }}" method="POST">
+    {{ form.title.label() }}{{ form.title() }}<br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+{% extends 'base.html' %}

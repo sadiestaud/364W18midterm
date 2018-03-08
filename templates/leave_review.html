@@ -1,0 +1,10 @@
+<form action="{{ url_for('view_reviews') }}" method="POST">
+    {{ form.name.label() }}{{ form.name() }}<br>
+    {{ form.movie.label() }}{{ form.movie() }}<br>
+    {{ form.movie_review_entry.label() }}{{ form.movie_review_entry() }}<br>
+    {{ form.number_of_stars.label() }}{{ form.number_of_stars() }}<br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+{% extends 'base.html' %}

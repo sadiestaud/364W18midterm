@@ -1,0 +1,21 @@
+{% block content %}
+<ul>
+{% for r in all_reviews %}
+    <ul>
+      <li><i>Posted by</i> <strong>{{ r[0] }}</strong></li>
+        <ul>
+          <li>Movie: {{ r[1] }}</li>
+          <li>Review: {{ r[2] }}</li>
+          <li>Stars: {{ r[3] }}</li>
+        </ul>
+    </ul>
+{% endfor %}
+</ul>
+
+{% if not all_reviews %}
+    There are no saved reviews to show.
+{% endif %}
+{% endblock %}
+
+
+{% extends 'base.html' %}
