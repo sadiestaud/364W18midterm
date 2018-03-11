@@ -8,6 +8,7 @@ What can I do on here?
 
 ## To note
 * In order to use this application, I had to create an api key for myself. I left it in the code on line 36 in the baseurl. In order to use this with you own api key, you would need to generate one through the IMDB website and paste it at the end of the url. I am not concerned with my security using this database for my project, therefore I left it in there
+* Database name: sadiesMIDTERM
 
 ## Requirements
 
