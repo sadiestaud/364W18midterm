@@ -6,6 +6,9 @@ Welcome to my SI364 Midterm project!
 What can I do on here?
 **Great question.** This application uses the IMDB movie database! On here you are able to search for movies and receive some information about them. You can also leave a movie review, as well as view other reviews people have left! Thanks for viewing (:
 
+## To note
+* In order to use this application, I had to create an api key for myself. I left it in the code on line 36 in the baseurl. In order to use this with you own api key, you would need to generate one through the IMDB website and paste it at the end of the url. I am not concerned with my security using this database for my project, therefore I left it in there
+
 ## Requirements
 
 ### Routes
@@ -33,10 +36,10 @@ template files.**
 * **At least one errorhandler for a 404 error and a corresponding template.**
 * **At least one request to a REST API that is based on data submitted in a
 WTForm.**
-* At least one additional (not provided) WTForm that sends data with a GET
-request to a new page.
-* At least one additional (not provided) WTForm that sends data with a POST
-request to the same page.
+* **At least one additional (not provided) WTForm that sends data with a GET
+request to a new page.**
+* **At least one additional (not provided) WTForm that sends data with a POST
+request to the same page.**
 * **At least one custom validator for a field in a WTForm.**
 * **At least 2 additional model classes.**
 * **Have a one:many relationship that works properly built between 2 of your
